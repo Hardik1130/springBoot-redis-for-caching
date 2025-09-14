@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "7199b508-ac85-4411-9e38-8b8eafca1f4c",
+		"name": "Spring Boot Crud Using PostgreSql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47473242",
+		"_collection_link": "https://developeryt01-7284073.postman.co/workspace/Learn-With-Developer's-Workspac~9db7ae3f-5ed0-4806-8f2a-bb7ddc626ae8/collection/47473242-7199b508-ac85-4411-9e38-8b8eafca1f4c?action=share&source=collection_link&creator=47473242"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"johndoe@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users?page=0&size=10&sortKey=name&sortValue=asc&name=it&email=das",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "sortKey",
+							"value": "name"
+						},
+						{
+							"key": "sortValue",
+							"value": "asc"
+						},
+						{
+							"key": "name",
+							"value": "it"
+						},
+						{
+							"key": "email",
+							"value": "das"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"John Doe Updated Name\",\r\n    \"email\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/4250449e-8f97-48ab-bfc5-2155bb30cae9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"4250449e-8f97-48ab-bfc5-2155bb30cae9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/4250449e-8f97-48ab-bfc5-2155bb30cae9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"4250449e-8f97-48ab-bfc5-2155bb30cae9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
