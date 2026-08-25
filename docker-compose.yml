@@ -1,6 +1,6 @@
 services:
   redis:
-    image: redis:7.2
+    image: redis:7.4
     container_name: redis
     restart: unless-stopped
     ports:
@@ -19,12 +19,12 @@ services:
 
   postgres:
     container_name: docker-spring-postgres
-    image: postgres
+    image: postgres:17
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres@123
       - POSTGRES_DB=user_management
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - './volumes/postgres_data:/var/lib/postgresql/data'

@@ -7,10 +7,16 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.Optional;
+
 public interface UserRepository extends JpaRepository<User, String> {
 
     @Query(value = "select * from users where name ILIKE CONCAT('%', :name, '%') and email ILIKE CONCAT('%', :email, '%')",
             countQuery = "select count(*) from users where name ILIKE CONCAT('%', :name, '%') and email ILIKE CONCAT('%', :email, '%')"
             , nativeQuery = true)
     Page<User> searchUsersByNameAndEmail(String name, String email, Pageable pageable);
+
+    Optional<User> findByEmailIgnoreCase(String email);
+
+    Optional<User> findByIdAndCityId(String id, String city);
 }
